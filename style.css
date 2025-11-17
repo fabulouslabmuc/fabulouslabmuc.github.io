@@ -1,0 +1,186 @@
+/* mini css reset */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* definitions from the styleguide */
+
+@font-face {
+  font-family: kario;
+  src: url(Kario39C3VarWEB-Roman.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: "OfficerCond";
+  src: url("OfficerSansCondWeb-Bold.woff2") format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OfficerCond";
+  src: url("OfficerSansCondWeb-BoldItalic.woff2") format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "OfficerCond";
+  src: url("OfficerSansCondWeb-Regular.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "OfficerCond";
+  src: url("OfficerSansCondWeb-RegularItalic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Officer";
+  src: url("OfficerSansWeb-Bold.woff2") format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Officer";
+  src: url("OfficerSansWeb-BoldItalic.woff2") format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Officer";
+  src: url("OfficerSansWeb-Regular.woff2") format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Officer";
+  src: url("OfficerSansWeb-RegularItalic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+:root {
+  --primary-color: #00ff00;
+  --dark-color: #141414;
+  --neutral-color: #faf5f5;
+  --secondary-color: #9673ff;
+  --additional-1-color: #ff3719;
+  --additional-2-color: #66f2ff;
+}
+
+/* actual styling */
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+}
+
+h1 {
+  font-family: kario;
+  font-weight: 100;
+  font-kerning: none;
+}
+
+p {
+  font-family: Officer;
+}
+
+a {
+  color: var(--dark-color);
+  font-weight: bold;
+  text-decoration: none;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
+a:hover {
+  color: var(--secondary-color);
+  background-color: var(--dark-color);
+}
+
+#container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+@keyframes animateWeight {
+  from {font-weight: 100;}
+  to {font-weight: 10;}
+}
+
+/* sm 40rem (640px) */
+@media (width >= 40rem) {
+  #animation {
+    --font-size: 40pt !important;
+  }
+}
+
+/* md 48rem (768px) */
+@media (width >= 48rem) {
+  #animation {
+    --font-size: 50pt !important;
+  }
+}
+
+/* lg 64rem (1024px) */
+@media (width >= 64rem) {
+  #animation {
+    --font-size: 60pt !important;
+  }
+}
+
+/* xl 80rem (1280px) */
+@media (width >= 80rem) {
+  #animation {
+    --font-size: 70pt !important;
+  }
+}
+
+/* 2xl 96rem (1536px) */
+@media (width >= 96) {
+  #animation {
+    --font-size: 80pt !important;
+  }
+}
+
+#animation {
+  --font-size: 30pt;
+  font-family: kario;
+  font-weight: 100;
+  font-kerning: none;
+  font-size: var(--font-size);
+  font-stretch: 120%;
+
+  margin: 0 auto;
+}
+
+#animation div {
+  line-height: var(--font-size);
+}
+
+#animation div span {
+  animation-name: animateWeight;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+#footer {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-family: Officer;
+}
+
+#impressum h1 {
+  margin-bottom: 1rem;
+}

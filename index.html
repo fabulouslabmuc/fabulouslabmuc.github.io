@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FabulousLab Munich </title>
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" defer="">
+			window.onload = function() {
+				var animation = document.getElementById('animation');
+
+				var rows = animation.children.length;
+				var cols = animation.children[0].children.length;
+
+
+				for (var row = 0; row < rows; row++) {
+					var rowElement = animation.children[row];
+					// console.debug("row %i: ", row, rowElement);
+					
+					for (var col = 0; col < cols; col++) {
+						var colElement = rowElement.children[col];
+
+						var ampl = Math.sin((row + col) / cols * Math.PI / 2.0);
+
+						// console.debug("row %i col %i -> ", row, col, ampl);
+						colElement.style.cssText = "animation-delay: -" + ampl * 3.0 + "s;";
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="animation">
+				<div><span>F</span><span>A</span><span>B</span><span>U</span><span>L</span><span>O</span><span>U</span><span>S</span><span> </span><span>L</span><span>A</span><span>B</span>
+				</div>
+				<div><span>F</span><span>A</span><span>B</span><span>U</span><span>L</span><span>O</span><span>U</span><span>S</span><span> </span><span>L</span><span>A</span><span>B</span>
+				</div>
+				<div><span>F</span><span>A</span><span>B</span><span>U</span><span>L</span><span>O</span><span>U</span><span>S</span><span> </span><span>L</span><span>A</span><span>B</span>
+				</div>
+				<div><span>F</span><span>A</span><span>B</span><span>U</span><span>L</span><span>O</span><span>U</span><span>S</span><span> </span><span>L</span><span>A</span><span>B</span>
+				</div>
+				<div><span>F</span><span>A</span><span>B</span><span>U</span><span>L</span><span>O</span><span>U</span><span>S</span><span> </span><span>L</span><span>A</span><span>B</span>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<a href="impressum.html">Impressum</a>
+		</div>
+	</body>
+</html>
